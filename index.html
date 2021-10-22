@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实例</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .box {
+            position: relative;
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+            box-sizing: border-box;
+            border: 2px solid green;
+            /* transition: width 0.5s; */
+        }
+
+        /* 鼠标经过会显示befo伪元素遮罩层 */
+        .box:hover::before {
+            display: block;
+        }
+
+        /* 遮罩层
+        
+        */
+        .box::before {
+            content: '';
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .4);
+        }
+
+        header,
+        nav,
+        aside,
+        article,
+        footer,
+        section {
+            height: 50px;
+            width: 100px;
+        }
+
+        video {
+            width: 100%;
+            height: 200px;
+
+        }
+
+        input[value] {
+            color: red;
+        }
+
+        input[value="密码"] {
+            background-color: green;
+        }
+
+
+        /* 结构伪类选择器 */
+        li:nth-child(2) {
+            color: blue;
+        }
+
+        li:nth-child(3) {
+            list-style: none;
+        }
+
+        /* 关键字odd偶数 */
+        ul li:nth-child(odd) {
+            color: skyblue;
+        }
+
+
+        /* 利用公式，但是未知数只能是n */
+        ol li:nth-child(2n) {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <header>头怒</header>
+    <nav>导航栏</nav>
+    <aside>侧边栏</aside>
+    <article>文章
+        <section>大盒子</section>
+    </article>
+    <footer>底部</footer>
+    <video src="xiaomishiping.mp4" autoplay="autoplay" loop="loop" muted="muted" poster="images/logo.png"
+        controls></video>
+    <form action="">
+        <input type="search" required placeholder="卢泓玮帅" autocomplete="on" name="l
+        ">搜索<br>
+        <input type="submit" value="提交">
+        密码：<input type="password" name="" id="" value="密码">
+    </form>
+    <ul>
+        <li>第1个孩子</li>
+        <li>第2个孩子</li>
+        <li>第3个孩子</li>
+        <li>第4个孩子</li>
+        <li>第5个孩子</li>
+    </ul>
+    <ol>
+        <li>第1个孩子</li>
+        <li>第2个孩子</li>
+        <li>第3个孩子</li>
+        <li>第4个孩子</li>
+        <li>第5个孩子</li>
+    </ol>
+    <div class="box"></div>
+</body>
+
+</html>
